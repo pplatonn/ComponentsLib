@@ -1,0 +1,41 @@
+.ui-input {
+  width: 100%;
+  padding: 10px 16px;
+  font-family: inherit;
+  line-height: 1.5;
+  color: var(--color-black);
+  background-color: var(--color-gray-light);
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0, 108, 187, 0.1);
+  }
+
+  &[data-disabled='true'] {
+    background-color: var(--color-gray-light);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  &::placeholder {
+    color: var(--color-gray-dark);
+    opacity: 0.8;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}

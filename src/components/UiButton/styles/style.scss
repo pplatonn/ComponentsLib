@@ -1,0 +1,38 @@
+.ui-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border-radius: 16px;
+
+  &--layout-primary {
+    color: var(--color-white);
+    background: var(--color-primary);
+    
+    &:hover:not(:disabled) {
+      background: #005fa3;
+    }
+  }
+
+  &--layout-secondary {
+    color: var(--color-primary);
+    background: var(--color-gray-light);
+    border: 1px solid var(--color-gray);
+    
+    &:hover:not(:disabled) {
+      background: var(--color-gray);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
