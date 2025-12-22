@@ -1,3 +1,5 @@
+@use '../../styles/colors.scss';
+
 .ui-button {
   position: relative;
   display: inline-flex;
@@ -5,7 +7,7 @@
   justify-content: center;
   border: none;
   font-family: inherit;
-  font-size: var(--font-size);
+  font-size: var(--font-size-m); 
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -22,6 +24,10 @@
     &:hover:not(:disabled):not([data-disabled='true']) {
       background-color: var(--color-primary-hover);
       transform: translateY(-1px);
+    }
+    
+    &:active:not(:disabled):not([data-disabled='true']) {
+      transform: translateY(0);
     }
   }
 
@@ -52,11 +58,11 @@
     opacity: 0.5;
     cursor: not-allowed;
     
-    &.ui-button--layout-primary {
+    &.ui-button[data-layout='primary'] {
       background-color: var(--color-primary-disabled);
     }
     
-    &.ui-button--layout-secondary {
+    &.ui-button[data-layout='secondary'] {
       background-color: var(--color-gray-light);
       border-color: var(--color-border);
       color: var(--color-gray-dark);

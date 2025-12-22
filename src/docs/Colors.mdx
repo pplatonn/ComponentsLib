@@ -1,38 +1,113 @@
 import { ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
-# Colors
+## Основные цвета
 
-<ColorPalette>
+### Primary
+Используется для основных действий, акцентных элементов и фокуса.
+ <div style={{width: '60px', height: '30px', background: '#7c3aed', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-primary` `#7c3aed` 
+ <div style={{width: '60px', height: '30px', background: '#5b21b6', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-primary-hover` `#5b21b6` 
+ <div style={{width: '60px', height: '30px', background: '#c4b5fd', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-primary-disabled` `#c4b5fd` 
 
-<ColorItem
-  title='Primary'
-  colors={{
-    '--color-primary': '#006cbb',
-  }}
-/>
+### Secondary 
+Используется для второстепенных акцентов.
+ <div style={{width: '60px', height: '30px', background: '#d97706', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-secondary` `#d97706` 
 
-<ColorItem
-  title='Monochrome'
-  colors={{
-    '--color-white': '#ffffff',
-    '--color-gray-light': '#eeeeee',
-    '--color-gray': '#cccccc',
-    '--color-gray-dark': '#777777',
-    '--color-black': '#000000',
-  }}
-/>
+## Нейтральные цвета
 
-<ColorItem
-  title='Success'
-  colors={{
-    '--color-success': '#01bd78',
-  }}
-/>
+### Базовые нейтральные
 
-<ColorItem
-    title='Error'
-    colors={{
-      '--color-error': '#d40019',
-    }}
-/>
-</ColorPalette>
+ <div style={{width: '60px', height: '30px', background: '#ffffff', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-white` `#ffffff` 
+ <div style={{width: '60px', height: '30px', background: '#000000', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-black` `#000000` 
+
+### Оттенки серого
+
+ <div style={{width: '60px', height: '30px', background: '#eeeeee', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-gray-light` `#eeeeee` 
+ <div style={{width: '60px', height: '30px', background: '#ada6ae', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-gray` `#ada6ae` 
+ <div style={{width: '60px', height: '30px', background: '#777777', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-gray-dark` `#777777` 
+
+## Фоны и границы
+
+ <div style={{width: '60px', height: '30px', background: '#ece5f3', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-bg` `#ece5f3` 
+ <div style={{width: '60px', height: '30px', background: '#cbd5e1', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-border` `#cbd5e1` 
+
+## Текст
+
+ <div style={{width: '60px', height: '30px', background: '#000000', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-text` `var(--color-black)` 
+ <div style={{width: '60px', height: '30px', background: '#334155', border: '1px solid #ccc', borderRadius: '4px'}}></div> `--color-text-secondary` `#334155` 
+
+## Типографика
+
+### Размеры шрифтов
+ 
+ Мелкий текст, подписи, метки 
+ `--font-size-s` `0.8rem`
+  Основной текст (по умолчанию) 
+ `--font-size-m` `1.1rem`
+  Заголовки, крупные элементы 
+ `--font-size-l` `1.4rem`
+
+### Скругления
+
+ `--radius` `0.5rem` Скругление углов всех интерактивных элементов 
+
+## Отступы
+
+### Система отступов
+
+ `--spacing-s` `0.3rem` Минимальные отступы 
+ `--spacing-m` `1.1rem` Стандартные отступы 
+ `--spacing-l` `2.1rem` Крупные отступы 
+
+## Полная таблица переменных
+
+ Цвета `--color-primary` `#7c3aed` 
+ Цвета `--color-primary-hover` `#5b21b6` 
+ Цвета `--color-primary-disabled` `#c4b5fd` 
+ Цвета `--color-secondary` `#d97706` 
+ Цвета `--color-white` `#ffffff` 
+ Цвета `--color-gray-light` `#eeeeee` 
+ Цвета `--color-gray` `#ada6ae` 
+ Цвета `--color-gray-dark` `#777777` 
+ Цвета `--color-black` `#000000` 
+ Цвета `--color-bg` `#ece5f3` 
+ Цвета `--color-border` `#cbd5e1` 
+ Цвета `--color-text` `var(--color-black)` 
+ Цвета `--color-text-secondary` `#334155` 
+ Типографика `--font-size-s` `0.8rem` 
+ Типографика `--font-size-m` `1.1rem` 
+ Типографика `--font-size-l` `1.4rem` 
+ Оформление `--radius` `0.5rem` 
+ Отступы `--spacing-s` `0.3rem` 
+ Отступы `--spacing-m` `1.1rem` 
+ Отступы `--spacing-l` `2.1rem` 
+
+## Примеры использования
+
+### В компонентах Vue
+```vue
+<template>
+ <button 
+  class="ui-button" 
+  :data-layout="layout"
+  :data-disabled="isDisabled"
+ >
+  <slot />
+ </button>
+</template>
+
+<style scoped>
+.ui-button {
+ padding: var(--spacing-m);
+ font-size: var(--font-size-m);
+ border-radius: var(--radius);
+}
+
+.ui-button[data-layout="primary"] {
+ background-color: var(--color-primary);
+ color: var(--color-white);
+}
+
+.ui-button[data-layout="primary"]:hover {
+ background-color: var(--color-primary-hover);
+}
+</style>

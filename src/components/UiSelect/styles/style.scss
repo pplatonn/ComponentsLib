@@ -1,3 +1,5 @@
+@use '../../styles/colors.scss';
+
 .ui-select {
   width: 100%;
   
@@ -9,8 +11,8 @@
   &__select {
     width: 300px;
     padding: var(--spacing-m);
-    font-size: var(--font-size);
-    color: var(--color-text-primary);
+    font-size: var(--font-size-m); 
+    color: var(--color-text);
     background-color: var(--color-white);
     border: 2px solid var(--color-border);
     border-radius: var(--radius);
@@ -36,7 +38,6 @@
       box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
     }
     
-    // Has value
     &[data-has-value='true'] {
       border-color: var(--color-primary);
     }
@@ -56,8 +57,8 @@
     option {
       padding: var(--spacing-s) var(--spacing-m);
       background-color: var(--color-white);
-      color: var(--color-text-primary);
-      font-size: var(--font-size);
+      color: var(--color-text);
+      font-size: var(--font-size-m);
     }
 
     option:checked {

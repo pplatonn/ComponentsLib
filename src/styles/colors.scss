@@ -1,40 +1,29 @@
 :root {
-  --color-primary: #006cbb;
-
+  --color-primary: #7c3aed;     
+  --color-primary-hover: #5b21b6;   
+  --color-primary-disabled: #c4b5fd;  
+  
+  --color-secondary: #d97706;        
+  
   --color-white: #ffffff;
   --color-gray-light: #eeeeee;
   --color-gray: #ada6ae;
   --color-gray-dark: #777777;
   --color-black: #000000;
-  
-  --color-primary: #7c3aed;     
-  --color-primary-hover: #5b21b6;   
-  --color-primary-disabled: #c4b5fd; 
-  --color-secondary: #d97706;  
-  
-  --color-bg: #ece5f3;
-  
+
+  --color-bg: #ece5f3; 
   --color-border: #cbd5e1; 
 
-  --color-text-primary: var(--color-black);  
-  --color-text-secondary: #334155;           
-  
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: #334155;
   --color-text: var(--color-text-primary);
+  
   --font-size-s: 0.8rem;
   --font-size-m: 1.1rem;
   --font-size-l: 1.4rem;
-  --font-size: var(--font-size-m);
-
-  --radius: 0.5rem;
   
+  --radius: 0.5rem;
   --spacing-s: 0.3rem;
   --spacing-m: 1.1rem;
   --spacing-l: 2.1rem;
-  --spacing: var(--spacing-m);
-  --spacing-sm: calc(var(--spacing-s) * 1.5);
-
-  --color-secondary-hover: #b45309; 
-  --color-primary-disabled: #c4b5fd;
-  --color-secondary-hover: var(--color-secondary);
-  --color-primary-disabled: var(--color-primary); 
 }

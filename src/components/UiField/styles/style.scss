@@ -1,3 +1,5 @@
+@use '../../styles/colors.scss';
+
 .ui-field {
   display: flex;
   flex-direction: column;
@@ -7,7 +9,7 @@
   &__label {
     font-size: var(--font-size-s);
     font-weight: 500;
-    color: var(--color-text-primary);
+    color: var(--color-text);
     line-height: 1.5;
 
     .ui-field[data-has-label='true'] & {
