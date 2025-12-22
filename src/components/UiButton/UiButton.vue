@@ -5,6 +5,7 @@
     :disabled="props.isDisabled"
     :type="props.type"
     :data-layout="props.layout"
+    :data-type="props.type" 
     :data-disabled="props.isDisabled"
   >
     <slot>Кнопка</slot>

@@ -73,24 +73,6 @@ export const Secondary: StoryObj<typeof UiButton> = {
   },
 };
 
-export const WithCustomText: StoryObj<typeof UiButton> = {
-  args: {
-    layout: 'primary',
-  },
-  render: (args) => ({
-    components: { UiButton },
-    setup: () => ({ args }),
-    template: html`<UiButton v-bind="args">Нажми меня</UiButton>`,
-  }),
-  parameters: {
-    docs: {
-      description: {
-        story: 'Кнопка с кастомным текстом.',
-      },
-    },
-  },
-};
-
 export const Disabled: StoryObj<typeof UiButton> = {
   args: {
     layout: 'primary',

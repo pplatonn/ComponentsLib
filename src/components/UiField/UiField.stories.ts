@@ -39,7 +39,6 @@ export const WithInput: StoryObj<typeof UiField> = {
         <UiField label="E-mail">
           <UiInput v-model="email" placeholder="example@mail.com" />
         </UiField>
-        <p style="margin-top: 16px; font-size: 0.875rem;">Значение: {{ email || 'пусто' }}</p>
       </div>
     `,
   }),
@@ -49,16 +48,15 @@ export const WithSelect: StoryObj<typeof UiField> = {
   render: () => ({
     components: { UiField, UiSelect },
     setup: () => {
-      const country = ref('');
+      const opt = ref('Опция 1');
 
-      return { country };
+      return { opt };
     },
     template: html`
       <div style="max-width: 300px;">
         <UiField label="Страна">
           <UiSelect v-model="country" :options="['Опция 1', 'Опция 2', 'Опция 3', 'Опция 4']" />
         </UiField>
-        <p style="margin-top: 16px; font-size: 0.875rem;">Выбрано: {{ country || 'ничего' }}</p>
       </div>
     `,
   }),

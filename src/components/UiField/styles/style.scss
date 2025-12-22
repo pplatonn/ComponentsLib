@@ -1,11 +1,18 @@
 .ui-field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--spacing-s);
   width: 100%;
   
   &__label {
-    color: var(--color-black);
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+
+    .ui-field[data-has-label='true'] & {
+      margin-bottom: 2px;
+    }
   }
   
   &__content {

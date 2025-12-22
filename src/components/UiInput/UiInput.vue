@@ -6,6 +6,7 @@
       :disabled="props.isDisabled"
       :placeholder="props.placeholder"
       :data-disabled="props.isDisabled"
+      :data-has-value="!!props.modelValue"
       @input="handleInput"
       @focus="handleFocus"
       @blur="handleBlur"

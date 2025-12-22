@@ -1,6 +1,5 @@
 .ui-select {
   width: 100%;
-  max-width: 300px;
   
   &__wrapper {
     position: relative;
@@ -8,38 +7,57 @@
   }
   
   &__select {
-    width: 100%;
-    padding: 10px 16px;
-    color: var(--color-black);
-    background-color: var(--color-gray-light);
-    border: 1px solid var(--color-gray);
-    border-radius: 8px;
-    transition: border-color 0.2s;
+    width: 300px;
+    padding: var(--spacing-m);
+    font-size: var(--font-size);
+    color: var(--color-text-primary);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
     box-sizing: border-box;
     cursor: pointer;
+    min-height: 44px;
 
-    &:hover:not(:disabled) {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-m) center;
+    background-size: 16px;
+    padding-right: calc(var(--spacing-m) * 2.5);
+
+    &:hover:not(:disabled):not([data-disabled='true']) {
       border-color: var(--color-primary);
-      background-color: var(--color-white);
     }
     
     &:focus {
       border-color: var(--color-primary);
-      box-shadow: 0 0 0 2px rgba(0, 108, 187, 0.1);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
     }
     
-    &:disabled {
-      background-color: var(--color-gray);
+    // Has value
+    &[data-has-value='true'] {
+      border-color: var(--color-primary);
+    }
+
+    &:disabled,
+    &[data-disabled='true'] {
+      background-color: var(--color-gray-light);
       cursor: not-allowed;
       opacity: 0.7;
       color: var(--color-gray-dark);
+      
+      &:hover {
+        border-color: var(--color-border);
+      }
     }
     
     option {
-      padding: 8px 12px;
+      padding: var(--spacing-s) var(--spacing-m);
       background-color: var(--color-white);
-      color: var(--color-black);
+      color: var(--color-text-primary);
+      font-size: var(--font-size);
     }
 
     option:checked {

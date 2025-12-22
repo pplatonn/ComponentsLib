@@ -6,6 +6,7 @@
         :value="props.modelValue"
         :disabled="props.isDisabled"
         :data-disabled="props.isDisabled"
+        :data-has-value="!!props.modelValue" 
         @change="handleChange"
       >
         <option 
